@@ -1,0 +1,313 @@
+/* ------------------------------
+   RESET BÁSICO
+--------------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ------------------------------
+   BODY
+--------------------------------*/
+
+body {
+  background: #f1f1f1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+/* ------------------------------
+   CONTAINER
+--------------------------------*/
+
+.container {
+  width: 100%;
+  max-width: 520px;
+}
+
+/* ------------------------------
+   LOGO
+--------------------------------*/
+
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo img {
+  width: 200px;
+  max-width: 100%;
+}
+
+/* ------------------------------
+   LOGIN BOX
+--------------------------------*/
+
+.cad {
+  width: 100%;
+}
+
+.cad h1 {
+  color: #1428A0;
+  font-size: 30px;
+  font-weight: 800;
+
+  margin-bottom: 40px;
+}
+
+/* ------------------------------
+   INPUTS
+--------------------------------*/
+
+.input_caixa {
+  width: 100%;
+  height: 70px;
+
+  background: #ffffff;
+
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+
+  margin-bottom: 30px;
+}
+
+/* Ícone */
+
+.input_icone  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: 18px;
+}
+
+.input_icone img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+/* Input */
+
+.input_caixa input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-size: 22px;
+  color: #1428A0;
+}
+
+.input_caixa input::placeholder {
+  color: #1428A0;
+}
+
+/* ------------------------------
+   BOTÕES
+--------------------------------*/
+
+.botoes_div {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  margin-top: 10px;
+}
+
+/* Botão Entrar */
+
+.btn_cad {
+  width: 100%;
+  height: 70px;
+
+  border: none;
+  border-radius: 18px;
+
+  background: #1428A0;
+
+  color: white;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.btn_cad:hover {
+  background: #0f1f82;
+}
+
+/* Botão Voltar */
+
+.voltar {
+  width: 100%;
+  height: 70px;
+
+  border: 3px solid #1428A0;
+  border-radius: 18px;
+
+  background: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+
+  color: #1428A0;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  transition: 0.3s;
+}
+
+.voltar:hover {
+  background: #1428A0;
+  color: white;
+}
+
+/* ------------------------------
+   CADASTRO
+--------------------------------*/
+
+.cadastro {
+  text-align: center;
+
+  margin-top: 45px;
+
+  font-size: 18px;
+  color: #1428A0;
+}
+
+.cadastro a {
+  color: #1428A0;
+
+  font-weight: bold;
+  text-decoration: underline;
+  margin-left: 10px;
+}
+
+.cadastro a:hover {
+  opacity: 0.8;
+}
+
+/* ------------------------------
+   RESPONSIVIDADE
+--------------------------------*/
+
+/* Tablet */
+
+@media (max-width: 768px) {
+
+  .container {
+    max-width: 100%;
+  }
+
+  .cad img {
+    width: 120px;
+  }
+
+  .cad h1 {
+    font-size: 48px;
+    margin-bottom: 35px;
+  }
+
+  .input_caixa {
+    height: 65px;
+  }
+
+  .input_caixa input {
+    font-size: 20px;
+  }
+
+  .btn_entrar {
+    height: 70px;
+    font-size: 28px;
+  }
+
+  .voltar {
+    height: 65px;
+    font-size: 24px;
+  }
+
+  .cadastro {
+    font-size: 20px;
+  }
+}
+
+/* Celular */
+
+@media (max-width: 480px) {
+
+  body {
+    padding: 25px;
+  }
+
+  .logo img {
+    width: 100px;
+  }
+
+  .cad h1 {
+    font-size: 42px;
+    text-align: center;
+  }
+
+  .input_caixa {
+    height: 60px;
+
+    padding: 0 15px;
+
+    border-radius: 14px;
+  }
+
+  .input_icone img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .input_caixa input {
+    font-size: 18px;
+  }
+
+  .btn_entrar {
+    height: 65px;
+
+    font-size: 24px;
+
+    border-radius: 14px;
+  }
+
+  .voltar {
+    height: 60px;
+
+    font-size: 22px;
+
+    border-radius: 14px;
+  }
+
+  .cadastro {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .cadastro a {
+    display: inline-block;
+    margin-top: 5px;
+  }
+}
