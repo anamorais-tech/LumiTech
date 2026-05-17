@@ -1,6 +1,6 @@
 const form = document.getElementById("form_login");
 
-form.addEventListener("submit", function(event) {
+form.addEventListener("submit", function (event) {
 
   event.preventDefault();
 
@@ -10,11 +10,11 @@ form.addEventListener("submit", function(event) {
   const senha =
     document.getElementById("senha").value;
 
-  // PEGAR USUÁRIOS
+  //Procurar usuarios
   const usuarios =
     JSON.parse(localStorage.getItem("usuarios")) || [];
 
-  // VERIFICAR
+  //Verificar usuarios
   const usuarioEncontrado = usuarios.find(usuario =>
 
     usuario.email === email &&
@@ -22,21 +22,21 @@ form.addEventListener("submit", function(event) {
 
   );
 
-  // NÃO ENCONTRADO
-  if(!usuarioEncontrado) {
+  //Não encontrado
+  if (!usuarioEncontrado) {
 
     alert("E-mail ou senha inválidos.");
 
     return;
   }
 
-  // SALVAR SESSÃO
+  //Salvar a sessão
   sessionStorage.setItem(
     "usuarioLogado",
     usuarioEncontrado.nome
   );
 
-  // REDIRECIONAR
+  //Redirecionar tela
   window.location.href = "index.html";
 
 });

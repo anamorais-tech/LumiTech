@@ -1,6 +1,4 @@
-// ===============================
-// PREENCHER POTÊNCIA AUTOMÁTICA
-// ===============================
+// Preenche potência automaticamente
 
 const aparelho = document.getElementById("aparelho");
 const potencia = document.getElementById("potencia");
@@ -11,9 +9,7 @@ aparelho.addEventListener("change", () => {
 
 });
 
-// ===============================
-// CALCULAR CONSUMO
-// ===============================
+// Calcular consumo
 
 function calcular() {
 
@@ -34,8 +30,7 @@ function calcular() {
     ((potenciaValor * horas) / 1000) * dias;
 
   // Valor médio kWh Brasil
-  let valorMinimo = consumoMensal * 0.41;
-  let valorMaximo = consumoMensal * 1.47;
+  let valorMedio = consumoMensal * 0.77;
 
   // Exibir kWh
   document.getElementById("resultadoKwh")
@@ -44,5 +39,5 @@ function calcular() {
   // Exibir valor
   document.getElementById("resultadoValor")
     .innerText =
-      `Gasto estimado: R$ ${valorMinimo.toFixed(2)} até R$ ${valorMaximo.toFixed(2)}`;
+    `Gasto estimado: ≈ R$ ${valorMedio.toFixed(2)}`;
 }

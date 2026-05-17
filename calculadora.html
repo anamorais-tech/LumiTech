@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Calculadora de Consumo | LumiTech</title>
-
   <link rel="stylesheet" href="calculadora.css">
   <link rel="icon" type="image/png" href="img/logo.png">
 </head>
@@ -18,9 +17,8 @@
 
     <div class="linha"></div>
 
-    <!-- APARELHO  -->
-    <div class="campo aparelho-box">
-
+    <!--Aparelho-->
+    <div class="aparelho">
       <label for="aparelho">
         Aparelho
       </label>
@@ -29,99 +27,92 @@
         <option value="">Selecione</option>
 
         <option value="150">Geladeira</option>
-        <option value="5500">Chuveiro Elétrico</option>
-        <option value="350">Micro-ondas</option>
-        <option value="1000">Ar-condicionado</option>
-        <option value="90">Televisão</option>
+        <option value="250">Geladeira Frost-free</option>
+        <option value="120">Freezer</option>
+        <option value="4500">Chuveiro Elétrico</option>
+        <option value="1000">Micro-ondas</option>
+        <option value="900">Ar-condicionado (janela ~7.500 BTU)</option>
+        <option value="60">Televisão LED 32" </option>
+        <option value="60">Lâmpada Incandescente</option>
+        <option value="15">Lâmpada Fluorescente (CFL)</option>
         <option value="10">Lâmpada LED</option>
-        <option value="1500">Ferro de Passar</option>
-        <option value="2000">Máquina de Lavar</option>
-        <option value="100">Ventilador</option>
-        <option value="1200">Secador de Cabelo</option>
+        <option value="1200">Ferro de Passar</option>
+        <option value="500">Lavadora de Roupas</option>
+        <option value="50">Ventilador de Mesa/Pedestal</option>
+        <option value="1500">Secador de Cabelo</option>
         <option value="1000">Forno Elétrico</option>
+        <option value="10">Roteador Wi-Fi</option>
+        <option value="300">Computador Desktop </option>
+        <option value="50">Notebook</option>
+        <option value="2000">Aquecedor (ambiente)</option>
+        <option value="800">Cafeteira Elétrica</option>
+        <option value="1200">Lava-Louças</option>
       </select>
     </div>
 
-    <!-- LINHA 2 -->
-    <div class="linha-inputs">
-
-      <!-- POTÊNCIA -->
-      <div class="campo pequeno">
+    <!--Parte dos inputs-->
+    <div class="linha_inputs">
+      <!--potencia-->
+      <div class="potencia">
         <label for="potencia">
           Potência (W)
         </label>
-
-        <input 
-          type="number"
-          id="potencia"
-          readonly
-        >
+        <input type="number" id="potencia" readonly>
       </div>
 
-      <!-- HORAS -->
-      <div class="campo pequeno">
+      <!--Horas-->
+      <div class="horas">
         <label for="horas">
           Horas/dia
         </label>
-
-        <input 
-          type="number"
-          id="horas"
-          min="1"
-        >
+        <input type="number" id="horas" min="1">
       </div>
-
     </div>
 
-    <!-- DIAS -->
-    <div class="campo pequeno">
+    <!--Dias-->
+    <div class="dias">
       <label for="dias">
         Dias por mês
       </label>
-
-      <input 
-        type="number"
-        id="dias"
-        min="1"
-        max="31"
-      >
+      <input type="number" id="dias" min="1" max="31">
     </div>
 
-    <!-- RESULTADO -->
-    <div class="resultado-box">
-
-      <button onclick="calcular()">
-        Calcular
-      </button>
-
+    <!--Resultado-->
+    <div class="resultado_box">
       <div class="resultado">
-
         <div class="icone">
           <img src="img/raio.png" alt="">
         </div>
 
         <div class="resultado-texto">
-
           <h2>Consumo</h2>
-
           <p>
             <span id="resultadoKwh">0</span>
             kWh /Mês
           </p>
 
-          <small id="resultadoValor">
-            R$ 0,00 por mês
-          </small>
+          <p>
+            <span id="resultadoValor">
+              R$ 0,00 por mês
+            </span>
+          </p>
 
         </div>
-
       </div>
 
-    </div>
+      <button onclick="calcular()">
+        Calcular
+      </button>
 
+      <button onclick="window.location.href='index.html'">
+        Voltar
+      </button>
+
+    </div>
   </div>
 
   <script src="calculadora.js"></script>
 
 </body>
+
 </html>

@@ -1,262 +1,192 @@
-/* ------------------------------
-   RESET
---------------------------------*/
-
+/*Reset da página*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, sans-serif;
 }
-
-/* ------------------------------
-   BODY
---------------------------------*/
 
 body {
   min-height: 100vh;
-
   background: #efefef;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 20px;
 }
 
-/* ------------------------------
-   CONTAINER
---------------------------------*/
-
+/*Container*/
 .container {
   width: 100%;
- max-width: 600px;
-
+  max-width: 600px;
   background: #f6e28a;
-
   border-radius: 25px;
-
   padding: 35px;
 }
 
-/* ------------------------------
-   TÍTULO
---------------------------------*/
-
+/*Título*/
 .container h1 {
   color: #1428A0;
-
-  font-size: 38px;
-  font-weight: 800;
-
+  font-size: 42px;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
 .linha {
   width: 100%;
   height: 2px;
-
-  background: rgba(0,0,0,0.2);
-
+  background: rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
 }
 
-/* ------------------------------
-   CAMPOS
---------------------------------*/
-
-.campo {
+/*Campos*/
+.aparelho,
+.potencia,
+.horas,
+.dias {
   margin-bottom: 30px;
 }
 
-.campo label {
+/*Labels*/
+.aparelho label,
+.potencia label,
+.horas label,
+.dias label {
   display: block;
 
   color: #1428A0;
 
   font-size: 22px;
-  margin-bottom: 12px;
+  font-weight: 600;
+
+  margin-bottom: 10px;
 }
 
-.campo select,
-.campo input {
+/*Inputs e select*/
+.potencia input {
+  background: #d9d9d9;
+  color: #5f5f5f;
+  cursor: not-allowed;
   width: 100%;
   height: 60px;
-
   border: none;
   outline: none;
-
-  border-radius: 18px;
-
-  background: #f1f1f1;
-
+  border-radius: 15px;
   padding: 0 20px;
+  font-size: 20px;
+}
 
-  font-size: 22px;
-
+.aparelho select,
+.horas input,
+.dias input {
+  width: 100%;
+  height: 60px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  background: #f2f2f2;
+  padding: 0 20px;
+  font-size: 20px;
   color: #1428A0;
 }
 
-/* ------------------------------
-   LINHA INPUTS
---------------------------------*/
-
-.linha-inputs {
+/*Trecho dos inputs*/
+.linha_inputs {
   display: flex;
   gap: 25px;
 }
 
-.pequeno {
-  flex: 1;
+.potencia,
+.horas {
+  width: 50%;
 }
 
-/* ------------------------------
-   RESULTADO
---------------------------------*/
-
-.resultado-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 25px;
-
-  margin-top: 10px;
-}
-
-/* BOTÃO */
-
-button {
-  width: 280px;
-  height: 75px;
-
-  border: none;
-
-  border-radius: 18px;
-
-  background: #1428A0;
-
-  color: white;
-
-  font-size: 34px;
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #0f1f82;
-}
-
-/* RESULTADO */
-
+/*Área do resultado*/
 .resultado {
   display: flex;
   align-items: center;
-
   gap: 20px;
+  margin-bottom: 30px;
 }
 
-/*.icone {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
+/*Icone*/
 .icone img {
-  width: 75px;
-  height: 75px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
 }
 
+/*Texto do resultado*/
 .resultado-texto h2 {
   color: #1428A0;
-
   font-size: 28px;
-  font-weight: 800;
+  margin-bottom: 5px;
 }
 
 .resultado-texto p {
-  font-size: 48px;
-  font-weight: 800;
-
   color: black;
+  font-size: 22px;
+  margin-bottom: 5px;
 }
 
-.resultado-texto p span {
-  margin-right: 10px;
+/*Valor do resultado em Kwh*/
+#resultadoKwh {
+  font-size: 55px;
+  font-weight: bold;
 }
 
-.resultado-texto small {
-  display: block;
-
-  margin-top: 5px;
-
-  font-size: 18px;
-
+/*Volor do resultado em reais*/
+#resultadoValor {
+  font-size: 20px;
   color: #333;
 }
 
-/* ------------------------------
-   RESPONSIVIDADE
---------------------------------*/
+/*Botoes*/
+.resultado_box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-@media (max-width: 768px) {
+.resultado {
+  width: 100%;
+}
+
+.resultado_box button {
+  flex: 1;
+  height: 70px;
+  border: none;
+  border-radius: 15px;
+  background: #1428A0;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.resultado_box button:hover {
+  background: #0d1f80;
+}
+
+/*Responsividade*/
+@media(max-width: 768px) {
 
   .container {
     padding: 25px;
   }
 
   .container h1 {
-    font-size: 36px;
+    font-size: 34px;
   }
 
-  .linha-inputs {
+  .linha_inputs {
     flex-direction: column;
-    gap: 0;
   }
 
-  .resultado-box {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  button {
+  .potencia,
+  .horas {
     width: 100%;
-  }
-
-  .resultado {
-    justify-content: center;
-  }
-
-  .resultado-texto p {
-    font-size: 36px;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .container h1 {
-    font-size: 28px;
-  }
-
-  .campo label {
-    font-size: 18px;
-  }
-
-  .campo select,
-  .campo input {
-    font-size: 18px;
-    height: 55px;
-  }
-
-  button {
-    height: 65px;
-    font-size: 26px;
   }
 
   .resultado {
@@ -264,7 +194,65 @@ button:hover {
     text-align: center;
   }
 
+  .resultado_box {
+    flex-direction: column;
+  }
+
+  .resultado_box button {
+    width: 100%;
+  }
+}
+
+@media(max-width: 480px) {
+
+  body {
+    padding: 15px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .container h1 {
+    font-size: 28px;
+  }
+
+  .aparelho label,
+  .potencia label,
+  .horas label,
+  .dias label {
+    font-size: 18px;
+  }
+
+  .aparelho select,
+  .potencia input,
+  .horas input,
+  .dias input {
+    height: 52px;
+
+    font-size: 18px;
+  }
+
+  .icone img {
+    width: 65px;
+    height: 65px;
+  }
+
+  #resultadoKwh {
+    font-size: 40px;
+  }
+
   .resultado-texto p {
-    font-size: 30px;
+    font-size: 18px;
+  }
+
+  #resultadoValor {
+    font-size: 16px;
+  }
+
+  .resultado_box button {
+    height: 60px;
+
+    font-size: 22px;
   }
 }

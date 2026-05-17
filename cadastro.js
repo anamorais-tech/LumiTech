@@ -1,10 +1,10 @@
 const form = document.querySelector("form");
 
-form.addEventListener("submit", function(event) {
+form.addEventListener("submit", function (event) {
 
   event.preventDefault();
 
-  // CAMPOS
+  //Campos 
   const nome = document.getElementById("nome").value;
 
   const email = document.getElementById("email").value;
@@ -17,39 +17,38 @@ form.addEventListener("submit", function(event) {
   const confirmarSenha =
     document.getElementById("confirmar_senha").value;
 
-  // VALIDAR EMAIL
-  if(email !== confirmarEmail) {
+  //Confirmar email
+  if (email !== confirmarEmail) {
 
     alert("Os e-mails não coincidem.");
 
     return;
   }
 
-  // VALIDAR SENHA
-  if(senha !== confirmarSenha) {
+  //Confirmar senha
+  if (senha !== confirmarSenha) {
 
     alert("As senhas não coincidem.");
 
     return;
   }
 
-  // LISTA DE USUÁRIOS
+  //Lista de usuarios
   let usuarios =
     JSON.parse(localStorage.getItem("usuarios")) || [];
 
-  // VERIFICAR EMAIL EXISTENTE
   const usuarioExistente = usuarios.find(usuario =>
     usuario.email === email
   );
 
-  if(usuarioExistente) {
+  if (usuarioExistente) {
 
     alert("Este e-mail já está cadastrado.");
 
     return;
   }
 
-  // NOVO USUÁRIO
+  //Novo usuario
   const novoUsuario = {
 
     nome: nome,
@@ -58,7 +57,7 @@ form.addEventListener("submit", function(event) {
 
   };
 
-  // SALVAR
+  //Salvar
   usuarios.push(novoUsuario);
 
   localStorage.setItem(
@@ -68,7 +67,7 @@ form.addEventListener("submit", function(event) {
 
   alert("Cadastro realizado com sucesso!");
 
-  // REDIRECIONAR
+  //Redirecionar pagina 
   window.location.href = "login.html";
 
 });
