@@ -37,6 +37,6 @@ form.addEventListener("submit", function (event) {
   );
 
   //Redirecionar tela
-  window.location.href = "index.html";
+  window.location.href = "index_logado.html";
 
 });
