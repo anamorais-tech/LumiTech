@@ -27,11 +27,11 @@
     object-fit: contain;
   }
 
-  .nav{
-  margin: 0 10px;
-  display: flex;
-  align-items: center;
-  gap: 25px;
+  .nav {
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
   }
 
   .nav a {
@@ -49,13 +49,13 @@
   }
 
   /*INDEX LOGADO*/
-  .usuario{
-  width: 50px;
-  height: 50px;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
+  .usuario {
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
 
   /*Hero*/
   .comece_agora {
@@ -254,6 +254,11 @@
       height: 90px;
     }
 
+    .usuario {
+      width: 45px;
+      height: 45px;
+    }
+
     .comece_agora {
       min-height: 550px;
       padding: 60px 40px 0 40px;
@@ -326,6 +331,11 @@
 
     .logo {
       height: 60px;
+    }
+
+    .usuario {
+      width: 40px;
+      height: 40px;
     }
 
     .nav {
@@ -441,6 +451,11 @@
 
     .logo {
       height: 65px;
+    }
+
+    .usuario {
+      width: 35px;
+      height: 35px;
     }
 
     .comece_textos h1 {
