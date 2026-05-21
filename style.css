@@ -1,498 +1,686 @@
-  /*Reset da pagina*/
-  * {
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
+/*Reset da pagina*/
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-  body {
-    background: #f5f5f5;
-    color: #333;
-  }
+body {
+  background: #f5f5f5;
+  color: #333;
+}
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 90px;
-    padding: 0 50px;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-  }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  padding: 0 50px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
 
-  .logo {
-    height: 120px;
-    width: auto;
-    display: block;
-    object-fit: contain;
-  }
+.logo {
+  height: 120px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
 
-  .nav {
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
-    gap: 25px;
-  }
+.nav {
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
 
-  .nav a {
-    text-decoration: none;
-    color: #333;
-  }
+.nav a {
+  text-decoration: none;
+  color: #333;
+}
 
-  .btn_login {
-    background: #1e40af;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.btn_login {
+  background: #1e40af;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-  /*INDEX LOGADO*/
-  .usuario {
-    width: 50px;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
+/*INDEX LOGADO*/
+.usuario {
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 
-  /*Hero*/
-  .comece_agora {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    background: #eef3f7;
-    padding: 80px 80px 0 80px;
-    overflow: hidden;
-    min-height: 700px;
-  }
+/*Hero*/
+.comece_agora {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #eef3f7;
+  padding: 80px 80px 0 80px;
+  overflow: hidden;
+  min-height: 700px;
+}
 
-  .comece_textos {
-    max-width: 500px;
-    z-index: 2;
-  }
+.comece_textos {
+  max-width: 500px;
+  z-index: 2;
+}
+
+.comece_textos h1 {
+  font-size: 55px;
+  color: #0f2f92;
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.comece_textos p {
+  font-size: 28px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.btn_comece {
+  background: #1826b8;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 18px 35px;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn_comece:hover {
+  background: #0f1b91;
+}
+
+/*Imagem do hero*/
+.comece_imagem {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.comece_imagem img {
+  width: 100%;
+  max-width: none;
+}
+
+/*Informações rápidas*/
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background: #fff;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.info_itens {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.info_itens img {
+  width: 50px;
+  height: 50px;
+}
+
+/*Sobre o site*/
+.sobre {
+  padding: 100px 150px;
+}
+
+.sobre h1 {
+  color: #0f2f92;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.sobre p {
+  text-align: justify;
+  font-size: large;
+  color: #0f2f92;
+}
+
+/*Cards*/
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/*CARDS COM MESMO VISUAL DAS DICAS*/
+.card {
+  width: 320px;
+  min-height: 360px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 30px 25px;
+
+  text-align: center;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card h3 {
+  color: #0f2f92;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.img_card {
+  width: 110px;
+  margin-bottom: 20px;
+}
+
+/* -------------------
+   SECTION DICAS
+------------------- */
+
+.dicas {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.dicas h2 {
+  font-size: 42px;
+  color: #0f2f92;
+  margin-bottom: 15px;
+}
+
+.texto_dicas {
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 50px;
+}
+
+.dicas_cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+
+.dica_card {
+  width: 320px;
+  min-height: 360px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 30px 25px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+  transition: 0.3s;
+}
+
+.dica_card:hover {
+  transform: translateY(-8px);
+}
+
+.dica_card img {
+  width: 110px;
+  margin-bottom: 20px;
+}
+
+.dica_card h3 {
+  color: #0f2f92;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.dica_card p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* CARD BLOQUEADO */
+
+.bloqueado {
+  background: linear-gradient(135deg, #1e40af, #0f2f92);
+  color: white;
+}
+
+/*CADEADO COMO IMAGEM*/
+.cadeado {
+  margin-bottom: 20px;
+}
+
+.cadeado img {
+  width: 90px;
+  height: auto;
+}
+
+.bloqueado h3 {
+  color: white;
+}
+
+.bloqueado p {
+  color: white;
+}
+
+.bloqueado button {
+  margin-top: 25px;
+
+  border: none;
+
+  background: white;
+  color: #0f2f92;
+
+  padding: 14px 20px;
+
+  border-radius: 10px;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.bloqueado button:hover {
+  background: #dbe4ff;
+}
+
+/*Rodape*/
+.footer {
+  position: relative;
+  width: 100%;
+  margin-top: 80px;
+  line-height: 0;
+}
+
+.footer img {
+  width: 100%;
+  height: 200px;
+  display: block;
+}
+
+.footer p {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/*Responsividade*/
+
+/*Notebooks*/
+@media (max-width: 1200px) {
 
   .comece_textos h1 {
-    font-size: 55px;
-    color: #0f2f92;
-    margin-bottom: 20px;
-    line-height: 1.1;
+    font-size: 48px;
   }
 
   .comece_textos p {
-    font-size: 28px;
-    line-height: 1.5;
-    margin-bottom: 30px;
+    font-size: 24px;
+  }
+
+  .sobre {
+    padding: 80px 80px;
+  }
+
+  .cards {
+    gap: 50px;
+  }
+
+}
+
+/*Tablets*/
+@media (max-width: 992px) {
+
+  .header {
+    padding: 0 25px;
+  }
+
+  .logo {
+    height: 90px;
+  }
+
+  .usuario {
+    width: 45px;
+    height: 45px;
+  }
+
+  .comece_agora {
+    min-height: 550px;
+    padding: 60px 40px 0 40px;
+  }
+
+  .comece_textos {
+    max-width: 420px;
+  }
+
+  .comece_textos h1 {
+    font-size: 42px;
+  }
+
+  .comece_textos p {
+    font-size: 22px;
   }
 
   .btn_comece {
-    background: #1826b8;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 18px 35px;
-    font-size: 26px;
-    cursor: pointer;
-    transition: 0.3s;
+    font-size: 20px;
+    padding: 14px 24px;
   }
 
-  .btn_comece:hover {
-    background: #0f1b91;
-  }
-
-
-  /*Imagem do comece agora (hero)*/
-  .comece_imagem {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  .comece_imagem img {
     width: 100%;
-    height: 100%;
+  }
+
+  .sobre {
+    padding: 70px 50px;
+  }
+
+  .sobre p {
+    font-size: 17px;
+  }
+
+  .cards {
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .card {
+    width: 280px;
+    min-height: auto;
+  }
+
+  .img_card {
+    width: 120px;
+  }
+
+  .footer img {
+    height: 170px;
+  }
+
+}
+
+/*Celulares*/
+@media (max-width: 768px) {
+
+  .header {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    padding: 15px;
+    height: auto;
+
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    height: 60px;
+  }
+
+  .usuario {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav a {
+    margin: 0;
+  }
+
+  .comece_agora {
+    min-height: auto;
+    padding: 50px 20px 250px 20px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .comece_textos {
+    max-width: 100%;
+  }
+
+  .comece_textos h1 {
+    font-size: 34px;
+  }
+
+  .comece_textos p {
+    font-size: 18px;
+  }
+
+  .btn_comece {
+    font-size: 18px;
+    padding: 12px 22px;
+  }
+
+  .comece_imagem {
+    justify-content: center;
     align-items: flex-end;
   }
 
   .comece_imagem img {
     width: 100%;
-    max-width: none;
   }
 
-  /*Informações rápidas*/
   .info {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    background: #fff;
-    margin: 20px;
-    border-radius: 10px;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
   }
 
   .info_itens {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    width: 100%;
+  }
+
+  .info_itens p {
+    font-size: 15px;
   }
 
   .info_itens img {
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: 42px;
   }
 
-  /*Sobre o site*/
   .sobre {
-    padding: 100px 150px;
+    padding: 60px 25px;
   }
 
   .sobre h1 {
-    margin-bottom: 10px;
-    color: #0f2f92;
-    text-align: left;
-    margin-bottom: 20px;
+    text-align: center;
   }
 
   .sobre p {
+    font-size: 16px;
     text-align: justify;
-    font-size: large;
-    color: #0f2f92;
   }
 
-  /*Cards*/
   .cards {
-    display: flex;
-    gap: 100px;
-    padding: 40px;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 25px;
   }
 
   .card {
-    background: #fff;
-    padding-top: 80px;
-    padding-left: 20px;
-    padding-right: 20px;
-    width: 300px;
-    height: 400px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-  }
-
-  .card:hover {
-    transform: translateY(-5px);
-  }
-
-  .card h3 {
-    color: #0f2f92;
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 350px;
+    min-height: auto;
   }
 
   .img_card {
-    width: 150px;
-    margin-bottom: 10px;
+    width: 110px;
   }
 
-  /*Rodape*/
-  .footer {
-    position: relative;
+  /* RESPONSIVIDADE DICAS */
+
+  .dicas {
+    padding: 60px 25px;
+  }
+
+  .dicas h2 {
+    font-size: 34px;
+  }
+
+  .texto_dicas {
+    font-size: 18px;
+  }
+
+  .dicas_cards {
+    gap: 25px;
+  }
+
+  .dica_card {
     width: 100%;
-    margin-top: 80px;
-    line-height: 0;
+    max-width: 350px;
+    min-height: auto;
   }
 
   .footer img {
-    width: 100%;
-    height: 200px;
-    display: block;
+    height: 140px;
+    object-fit: cover;
   }
 
   .footer p {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 16px;
+    bottom: 15px;
   }
 
-  /*Responsividade*/
+}
 
-  /*Notebooks*/
-  @media (max-width: 1200px) {
+/*Celulares menores*/
+@media (max-width: 480px) {
 
-    .comece_textos h1 {
-      font-size: 48px;
-    }
-
-    .comece_textos p {
-      font-size: 24px;
-    }
-
-    .sobre {
-      padding: 80px 80px;
-    }
-
-    .cards {
-      gap: 50px;
-    }
-
+  .logo {
+    height: 65px;
   }
 
-  /*Tablets*/
-  @media (max-width: 992px) {
-
-    .header {
-      padding: 0 25px;
-    }
-
-    .logo {
-      height: 90px;
-    }
-
-    .usuario {
-      width: 45px;
-      height: 45px;
-    }
-
-    .comece_agora {
-      min-height: 550px;
-      padding: 60px 40px 0 40px;
-    }
-
-    .comece_textos {
-      max-width: 420px;
-    }
-
-    .comece_textos h1 {
-      font-size: 42px;
-    }
-
-    .comece_textos p {
-      font-size: 22px;
-    }
-
-    .btn_comece {
-      font-size: 20px;
-      padding: 14px 24px;
-    }
-
-    .comece_imagem img {
-      width: 100%;
-    }
-
-    .sobre {
-      padding: 70px 50px;
-    }
-
-    .sobre p {
-      font-size: 17px;
-    }
-
-    .cards {
-      gap: 30px;
-      padding: 30px;
-    }
-
-    .card {
-      width: 280px;
-      height: auto;
-      padding-bottom: 40px;
-    }
-
-    .img_card {
-      width: 120px;
-    }
-
-    .footer img {
-      height: 170px;
-    }
-
+  .usuario {
+    width: 35px;
+    height: 35px;
   }
 
-  /*Celulares*/
-  @media (max-width: 768px) {
-
-    .header {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-
-      padding: 15px;
-      height: auto;
-
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      height: 60px;
-    }
-
-    .usuario {
-      width: 40px;
-      height: 40px;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .nav a {
-      margin: 0;
-    }
-
-    .comece_agora {
-      min-height: auto;
-      padding: 50px 20px 250px 20px;
-      text-align: center;
-      justify-content: center;
-    }
-
-    .comece_textos {
-      max-width: 100%;
-    }
-
-    .comece_textos h1 {
-      font-size: 34px;
-    }
-
-    .comece_textos p {
-      font-size: 18px;
-    }
-
-    .btn_comece {
-      font-size: 18px;
-      padding: 12px 22px;
-    }
-
-    .comece_imagem {
-      justify-content: center;
-      align-items: flex-end;
-    }
-
-    .comece_imagem img {
-      width: 100%;
-    }
-
-    .info {
-      flex-direction: column;
-      gap: 20px;
-      align-items: flex-start;
-    }
-
-    .info_itens {
-      width: 100%;
-    }
-
-    .info_itens p {
-      font-size: 15px;
-    }
-
-    .info_itens img {
-      width: 42px;
-      height: 42px;
-    }
-
-    .sobre {
-      padding: 60px 25px;
-    }
-
-    .sobre h1 {
-      text-align: center;
-    }
-
-    .sobre p {
-      font-size: 16px;
-      text-align: justify;
-    }
-
-    .cards {
-      flex-direction: column;
-      align-items: center;
-      gap: 25px;
-      padding: 25px;
-    }
-
-    .card {
-      width: 100%;
-      max-width: 350px;
-      height: auto;
-      padding-top: 50px;
-      padding-bottom: 40px;
-    }
-
-    .img_card {
-      width: 110px;
-    }
-
-    .footer img {
-      height: 140px;
-      object-fit: cover;
-    }
-
-    .footer p {
-      font-size: 16px;
-      bottom: 15px;
-    }
-
+  .comece_textos h1 {
+    font-size: 28px;
   }
 
-  /*Celulares menores*/
-  @media (max-width: 480px) {
-
-    .logo {
-      height: 65px;
-    }
-
-    .usuario {
-      width: 35px;
-      height: 35px;
-    }
-
-    .comece_textos h1 {
-      font-size: 28px;
-    }
-
-    .comece_textos p {
-      font-size: 16px;
-    }
-
-    .btn_comece {
-      width: 100%;
-      max-width: 250px;
-    }
-
-    .sobre {
-      padding: 50px 18px;
-    }
-
-    .sobre p {
-      font-size: 15px;
-    }
-
-    .card h3 {
-      font-size: 22px;
-    }
-
-    .card p {
-      font-size: 15px;
-    }
-
-    .footer img {
-      height: 120px;
-    }
-
-    .footer p {
-      font-size: 14px;
-    }
-
+  .comece_textos p {
+    font-size: 16px;
   }
+
+  .btn_comece {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .sobre {
+    padding: 50px 18px;
+  }
+
+  .sobre p {
+    font-size: 15px;
+  }
+
+  .card h3 {
+    font-size: 24px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+
+  .img_card {
+    width: 90px;
+  }
+
+  /* RESPONSIVIDADE DICAS */
+
+  .dicas {
+    padding: 50px 18px;
+  }
+
+  .dicas h2 {
+    font-size: 28px;
+  }
+
+  .texto_dicas {
+    font-size: 16px;
+  }
+
+  .dica_card {
+    padding: 25px 20px;
+  }
+
+  .dica_card h3 {
+    font-size: 24px;
+  }
+
+  .dica_card p {
+    font-size: 16px;
+  }
+
+  .dica_card img {
+    width: 90px;
+  }
+
+  /*CADEADO RESPONSIVO*/
+  .cadeado img {
+    width: 70px;
+  }
+
+  .bloqueado button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .footer img {
+    height: 120px;
+  }
+
+  .footer p {
+    font-size: 14px;
+  }
+
+}
