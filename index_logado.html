@@ -17,7 +17,25 @@
       <a href="#inicio">Início</a>
       <a href="#sobre">Sobre</a>
       <a href="#dicas">Dicas</a>
-      <img src="img/usuario.png" class="usuario" alt="Usuário">
+
+    <div class="usuario_menu">
+
+    <img src="img/usuario.png" class="usuario" alt="Usuário">
+
+    <div class="menu_dropdown" id="menuDropdown">
+
+      <p>
+        Olá, <span id="nomeUsuario"></span>!
+      </p>
+
+      <button onclick="sair()">
+        Sair
+      </button>
+
+    </div>
+
+  </div>
+
     </nav>
   </header>
 
@@ -102,51 +120,52 @@
 
     <h2>Dicas de economia</h2>
 
-    <p class="texto_dicas">
-      Pequenas atitudes podem reduzir bastante o consumo de energia da sua casa.
+<p class="texto_dicas">
+  Pequenas atitudes podem reduzir bastante o consumo de energia da sua casa.
+</p>
+
+<div class="dicas_cards">
+
+  <div class="dica_card">
+    <img src="img/lampada.png" alt="imagem">
+    <h3>Use LED</h3>
+    <p>Lâmpadas LED consomem menos energia.</p>
+  </div>
+
+  <div class="dica_card">
+    <img src="img/tomada.png" alt="imagem">
+    <h3>Tire da tomada</h3>
+    <p>Evite aparelhos em modo stand-by.</p>
+  </div>
+
+  <!-- CARD PARA USUÁRIO LOGADO -->
+  <div class="dica_card">
+
+    <img src="img/jogo.png" alt="imagem">
+
+    <h3>Jogo da memória</h3>
+
+    <p>
+      Teste seus conhecimentos e descubra maneiras divertidas de economizar energia.
     </p>
 
-    <div class="dicas_cards">
+    <button onclick="window.location.href='jogo/jogo.html'">
+      Jogar agora
+    </button>
 
-      <div class="dica_card">
-        <img src="img/lampada.png" alt="imagem">
-        <h3>Use LED</h3>
-        <p>Lâmpadas LED consomem menos energia.</p>
-      </div>
+  </div>
 
-      <div class="dica_card">
-        <img src="img/tomada.png" alt="imagem">
-        <h3>Tire da tomada</h3>
-        <p>Evite aparelhos em modo stand-by.</p>
-      </div>
+</div>
 
-      <div class="dica_card bloqueado">
-
-        <div class="cadeado">
-          <img src="img/cadeado.png" alt="imagem">
-        </div>
-
-        <h3>Mais dicas interativas</h3>
-
-        <p>
-          Jogue o jogo da memória e descubra novas formas de economizar energia.
-        </p>
-
-        <button onclick="window.location.href='login.html'">
-          Fazer login para jogar
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
+</section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <img src="img/rodape.png" alt="imagem">
     <p>©2026 - LumiTech</p>
   </footer>
+
+  <script src="index_logado.js"></script>
 
 </body>
 

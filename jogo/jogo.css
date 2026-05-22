@@ -1,0 +1,365 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background: #eef3f7;
+}
+
+/* =========================
+   SEÇÃO
+========================= */
+
+.jogo_memoria{
+  padding: 80px 20px;
+
+  text-align: center;
+}
+
+/* TITULO */
+
+.jogo_memoria h1{
+  font-size: 55px;
+
+  color: #0f2f92;
+
+  margin-bottom: 10px;
+}
+
+.subtitulo{
+  font-size: 24px;
+
+  margin-bottom: 40px;
+}
+
+/* =========================
+   PAINEL
+========================= */
+
+.painel{
+  display: flex;
+
+  justify-content: center;
+
+  gap: 25px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 50px;
+}
+
+.box_status{
+  background: white;
+
+  width: 250px;
+
+  padding: 20px;
+
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.box_status span{
+  font-size: 40px;
+}
+
+.box_status p{
+  font-size: 18px;
+}
+
+.box_status h2{
+  font-size: 35px;
+
+  color: #0f2f92;
+}
+
+/* =========================
+   TABULEIRO
+========================= */
+
+.tabuleiro{
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 35px;
+
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  padding: 30px;
+}
+
+/* =========================
+   CARTAS
+========================= */
+
+.carta{
+  position: relative;
+
+  height: 220px;
+
+  cursor: pointer;
+
+  transform-style: preserve-3d;
+
+  transition: transform 0.6s;
+}
+
+/* VIRAR */
+
+.carta.virada{
+  transform: rotateY(180deg);
+}
+
+/* FRENTE E VERSO */
+
+.frente,
+.verso{
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 20px;
+
+  backface-visibility: hidden;
+
+  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+/* FRENTE */
+
+.frente{
+  background: #0f2f92;
+
+  color: white;
+
+  font-size: 80px;
+  font-weight: bold;
+}
+
+/* VERSO */
+
+.verso{
+  background: white;
+
+  color: #0f2f92;
+
+  transform: rotateY(180deg);
+
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* CARTA CORRETA */
+
+.carta.correta .verso{
+  background: #22c55e;
+
+  color: white;
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+.btn_reiniciar{
+  margin-top: 50px;
+
+  background: transparent;
+
+  border: 2px solid #0f2f92;
+
+  color: #0f2f92;
+
+  padding: 15px 35px;
+
+  border-radius: 12px;
+
+  font-size: 22px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.btn_reiniciar:hover{
+  background: #0f2f92;
+
+  color: white;
+}
+
+/* =========================
+   TELA FINAL
+========================= */
+
+.fim_jogo{
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(0,0,0,0.6);
+
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.fim_jogo.mostrar{
+  display: flex;
+}
+
+.box_final{
+  background: white;
+
+  width: 90%;
+  max-width: 500px;
+
+  padding: 40px;
+
+  border-radius: 25px;
+
+  text-align: center;
+
+  animation: aparecer 0.4s ease;
+}
+
+.box_final h1{
+  color: #0f2f92;
+
+  font-size: 40px;
+
+  margin-bottom: 20px;
+}
+
+.box_final p{
+  font-size: 24px;
+
+  margin-bottom: 15px;
+}
+
+.box_final span{
+  color: #0f2f92;
+
+  font-weight: bold;
+}
+
+.box_final button{
+  margin-top: 20px;
+
+  background: #0f2f92;
+
+  color: white;
+
+  border: none;
+
+  padding: 15px 30px;
+
+  border-radius: 12px;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.box_final button:hover{
+  background: #091f66;
+}
+
+/* ANIMAÇÃO */
+
+@keyframes aparecer{
+
+  from{
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media(max-width: 900px){
+
+  .tabuleiro{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media(max-width: 768px){
+
+  .jogo_memoria h1{
+    font-size: 40px;
+  }
+
+  .subtitulo{
+    font-size: 18px;
+  }
+
+  .tabuleiro{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .carta{
+    height: 180px;
+  }
+
+  .verso{
+    font-size: 18px;
+  }
+
+}
+
+@media(max-width: 480px){
+
+  .tabuleiro{
+    grid-template-columns: 1fr;
+  }
+
+  .carta{
+    height: 160px;
+  }
+
+  .frente{
+    font-size: 60px;
+  }
+
+}

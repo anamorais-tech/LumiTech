@@ -57,6 +57,71 @@ body {
   cursor: pointer;
 }
 
+/* MENU USUÁRIO */
+
+.usuario_menu {
+  position: relative;
+}
+
+.menu_dropdown {
+  position: absolute;
+
+  top: 60px;
+  right: 0;
+
+  width: 220px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  padding: 20px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+
+  display: none;
+
+  z-index: 1000;
+}
+
+.menu_dropdown.ativo {
+  display: block;
+}
+
+.menu_dropdown p {
+  margin-bottom: 15px;
+
+  color: #0f2f92;
+
+  font-weight: bold;
+
+  font-size: 16px;
+}
+
+.menu_dropdown button {
+  width: 100%;
+
+  border: none;
+
+  background: #1e40af;
+
+  color: white;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  transition: 0.3s;
+}
+
+.menu_dropdown button:hover {
+  background: #0f2f92;
+}
+
 /*Hero*/
 .comece_agora {
   position: relative;
@@ -316,6 +381,30 @@ body {
 
 .bloqueado button:hover {
   background: #dbe4ff;
+}
+
+.dica_card button {
+  margin-top: 25px;
+
+  border: none;
+
+  background: #1e40af;
+  color: white;
+
+  padding: 14px 20px;
+
+  border-radius: 10px;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.dica_card button:hover {
+  background: #0f2f92;
 }
 
 /*Rodape*/

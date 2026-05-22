@@ -41,3 +41,21 @@ function calcular() {
     .innerText =
     `Gasto estimado: ≈ R$ ${valorMedio.toFixed(2)}`;
 }
+
+function voltarPagina() {
+
+  // verifica se existe usuário logado
+  const usuarioLogado =
+    sessionStorage.getItem("usuarioLogado");
+
+  if (usuarioLogado) {
+
+    window.location.href = "index_logado.html";
+
+  } else {
+
+    window.location.href = "index.html";
+
+  }
+
+}

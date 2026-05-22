@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jogo da Memória | LumiTech</title>
+
+  <link rel="stylesheet" href="jogo.css">
+</head>
+
+<body>
+
+  <section class="jogo_memoria">
+
+    <h1>Jogo da Memória</h1>
+
+    <p class="subtitulo">
+      Encontre os pares e descubra dicas para economizar energia!
+    </p>
+
+    <!-- PAINEL -->
+
+    <div class="painel">
+
+      <!-- TEMPO -->
+
+      <div class="box_status">
+        <span>⏰</span>
+
+        <div>
+          <p>Tempo</p>
+          <h2 id="tempo">00:00</h2>
+        </div>
+      </div>
+
+      <!-- TENTATIVAS -->
+
+      <div class="box_status">
+        <span>⭐</span>
+
+        <div>
+          <p>Tentativas</p>
+          <h2 id="tentativas">0</h2>
+        </div>
+      </div>
+
+      <!-- PARES -->
+
+      <div class="box_status">
+        <span>✅</span>
+
+        <div>
+          <p>Pares encontrados</p>
+          <h2 id="pares">0/6</h2>
+        </div>
+      </div>
+
+      <!-- PONTUAÇÃO -->
+
+      <div class="box_status">
+        <span>🏆</span>
+
+        <div>
+          <p>Pontuação</p>
+          <h2 id="pontuacao">0</h2>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TABULEIRO -->
+
+    <div class="tabuleiro">
+
+      <!-- PAR 1 -->
+
+      <div class="carta" data-par="1">
+        <div class="frente">?</div>
+
+        <div class="verso">
+          🚿 Banho rápido
+        </div>
+      </div>
+
+      <div class="carta" data-par="1">
+        <div class="frente">?</div>
+
+        <div class="verso">
+          O chuveiro elétrico consome muita energia.
+        </div>
+      </div>
+
+      <!-- PAR 2 -->
+
+      <div class="carta" data-par="2">
+        <div class="frente">?</div>
+
+        <div class="verso">
+          💡 Use LED
+        </div>
+      </div>
+
+      <div class="carta" data-par="2">
+        <div class="frente">?</div>
+
+        <div class="verso">
+          Lâmpadas LED economizam mais energia.
+        </div>
+      </div>
+
+      <!-- PAR 3 -->
+
+      <div class="carta" data-par="3">
+        <div class="frente">?</div>
+
+        <div class="verso">
+          ❄️ Geladeira fechada
+        </div>
+      </div>
+
+      <div class="carta" data-par="3">
+        <div class="frente">?</div>
+
+        <div class="verso">
+          Evite abrir a geladeira várias vezes.
+        </div>
+      </div>
+
+      <!-- PAR 4 -->
+
+      <div class="carta" data-par="4">
+        <div class="frente">?</div>
+
+        <div class="verso">
+          🔌 Tire da tomada
+        </div>
+      </div>
+
+      <div class="carta" data-par="4">
+        <div class="frente">?</div>
+
+        <div class="verso">
+          Aparelhos em standby continuam consumindo.
+        </div>
+      </div>
+
+      <!-- PAR 5 -->
+
+      <div class="carta" data-par="5">
+        <div class="frente">?</div>
+
+        <div class="verso">
+          🌞 Aproveite o sol
+        </div>
+      </div>
+
+      <div class="carta" data-par="5">
+        <div class="frente">?</div>
+
+        <div class="verso">
+          Use iluminação natural durante o dia.
+        </div>
+      </div>
+
+      <!-- PAR 6 -->
+
+      <div class="carta" data-par="6">
+        <div class="frente">?</div>
+
+        <div class="verso">
+          👕 Junte roupas
+        </div>
+      </div>
+
+      <div class="carta" data-par="6">
+        <div class="frente">?</div>
+
+        <div class="verso">
+          Use a máquina de lavar com carga completa.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTÃO -->
+
+    <button class="btn_reiniciar" onclick="location.reload()">
+      🔄 Reiniciar jogo
+    </button>
+
+  </section>
+
+  <!-- TELA FINAL -->
+
+  <div class="fim_jogo" id="fimJogo">
+
+    <div class="box_final">
+
+      <h1>🎉 Parabéns!</h1>
+
+      <p>
+        Você encontrou todos os pares!
+      </p>
+
+      <p>
+        🏆 Pontuação:
+        <span id="pontuacaoFinal">0</span>
+      </p>
+
+      <p>
+        ⏰ Tempo:
+        <span id="tempoFinal">00:00</span>
+      </p>
+
+      <button onclick="location.reload()">
+        Jogar novamente
+      </button>
+
+    </div>
+
+  </div>
+
+  <script src="jogo.js"></script>
+
+</body>
+
+</html>
