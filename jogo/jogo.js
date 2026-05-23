@@ -1,19 +1,11 @@
 const cartas = document.querySelectorAll(".carta");
 
-/* =========================
-   VARIAVEIS
-========================= */
-
 let primeiraCarta = null;
 let segundaCarta = null;
 let bloqueado = false;
 let tentativas = 0;
 let pares = 0;
 let pontuacao = 0;
-
-/* =========================
-   ELEMENTOS
-========================= */
 
 const tentativasTexto =
 document.getElementById("tentativas");
@@ -36,10 +28,6 @@ document.getElementById("pontuacaoFinal");
 const tempoFinal =
 document.getElementById("tempoFinal");
 
-/* =========================
-   TEMPO
-========================= */
-
 let segundos = 0;
 const cronometro = setInterval(() => {
 
@@ -48,8 +36,6 @@ const cronometro = setInterval(() => {
   atualizarTempo();
 
 }, 1000);
-
-/* FUNÇÃO TEMPO */
 
 function atualizarTempo(){
 
@@ -66,9 +52,7 @@ function atualizarTempo(){
 
 }
 
-/* =========================
-   EMBARALHAR
-========================= */
+/* embaralha cartas*/
 
 const tabuleiro =
 document.querySelector(".tabuleiro");
@@ -83,9 +67,7 @@ document.querySelector(".tabuleiro");
 
   });
 
-/* =========================
-   CLIQUES
-========================= */
+/*cliques*/
 
 cartas.forEach(carta => {
 
@@ -122,9 +104,7 @@ cartas.forEach(carta => {
 
 });
 
-/* =========================
-   VERIFICAR
-========================= */
+/*verificação*/
 
 function verificarPar(){
 
@@ -139,20 +119,13 @@ function verificarPar(){
   if(valor1 === valor2){
 
     primeiraCarta.classList.add("correta");
-
     segundaCarta.classList.add("correta");
-
     pares++;
-
     pontuacao += 100;
-
     paresTexto.innerHTML =
     `${pares}/6`;
-
     pontuacaoTexto.innerHTML =
     pontuacao;
-
-    /* TERMINOU O JOGO */
 
     if(pares === 6){
 
@@ -164,7 +137,7 @@ function verificarPar(){
 
   }
 
-  /* ERROU */
+  /*erro*/
 
   else{
 
@@ -195,17 +168,13 @@ function verificarPar(){
 
 }
 
-/* =========================
-   FINALIZAR JOGO
-========================= */
-
 function finalizarJogo(){
 
-  /* PARA O RELÓGIO */
+  /*para relogio*/
 
   clearInterval(cronometro);
 
-  /* SALVAR RESULTADOS */
+  /*salva os resultados*/
 
   localStorage.setItem(
     "pontuacaoJogo",
@@ -217,15 +186,13 @@ function finalizarJogo(){
     tempoTexto.innerHTML
   );
 
-  /* MOSTRAR RESULTADOS */
+  /*mostrar os resultados*/
 
   pontuacaoFinal.innerHTML =
   pontuacao;
 
   tempoFinal.innerHTML =
   tempoTexto.innerHTML;
-
-  /* MOSTRAR TELA */
 
   setTimeout(() => {
 
@@ -234,10 +201,6 @@ function finalizarJogo(){
   }, 700);
 
 }
-
-/* =========================
-   RESETAR
-========================= */
 
 function resetar(){
 

@@ -1,7 +1,3 @@
-/* =========================
-   DADOS SALVOS
-========================= */
-
 const pontuacao =
   localStorage.getItem("pontuacaoJogo");
 
@@ -20,20 +16,12 @@ const resultadoBox =
 const btnJogar =
   document.getElementById("btnJogar");
 
-/* =========================
-   PRIMEIRA PARTIDA
-========================= */
-
 if(!pontuacao){
 
   resultadoBox.style.display =
   "none";
 
 }
-
-/* =========================
-   JÁ JOGOU
-========================= */
 
 else{
 
@@ -48,20 +36,12 @@ else{
 
 }
 
-/* =========================
-   INICIAR JOGO
-========================= */
-
 btnJogar.addEventListener("click", () => {
 
   window.location.href =
   "jogo.html";
 
 });
-
-/* =========================
-   VOLTAR
-========================= */
 
 function voltarPagina(){
 

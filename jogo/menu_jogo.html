@@ -3,91 +3,70 @@
 
 <head>
 
-  <meta charset="UTF-8">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-  <title>Jogo da Memória | LumiTech</title>
-
-  <link rel="icon"
-        type="image/png"
-        href="img/logo.png">
-
-  <link rel="stylesheet"
-        href="menu_jogo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória | LumiTech</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" href="menu_jogo.css">
 
 </head>
 
 <body>
 
-  <div class="menu_jogo">
+    <div class="menu_jogo">
 
-    <img src="../img/jogo.png" alt="imagem">
+        <img src="../img/jogo.png" alt="imagem">
 
-    <h1>Jogo da Memória</h1>
+        <h1>Jogo da Memória</h1>
 
-    <p class="descricao">
+        <p class="descricao">
 
-      Descubra formas divertidas de economizar energia
-      enquanto testa sua memória.
+            Descubra formas divertidas de economizar energia
+            enquanto testa sua memória.
 
-    </p>
+        </p>
 
-    <!-- RESULTADOS -->
+        <div class="resultado_box" id="resultadoBox">
 
-    <div class="resultado_box"
-         id="resultadoBox">
+            <h2>Última partida</h2>
 
-      <h2>Última partida</h2>
+            <div class="resultado_item">
 
-      <!-- PONTUAÇÃO -->
+                <p>Pontuação</p>
 
-      <div class="resultado_item">
+                <span id="pontuacaoSalva">
+                    0
+                </span>
 
-        <p>Pontuação</p>
+            </div>
 
-        <span id="pontuacaoSalva">
-          0
-        </span>
+            <div class="resultado_item">
 
-      </div>
+                <p>Tempo</p>
 
-      <!-- TEMPO -->
+                <span id="tempoSalvo">
+                    00:00
+                </span>
 
-      <div class="resultado_item">
+            </div>
 
-        <p>Tempo</p>
+        </div>
 
-        <span id="tempoSalvo">
-          00:00
-        </span>
+        <button class="btn_jogar" id="btnJogar">
 
-      </div>
+            Iniciar jogo
+
+        </button>
+
+        <button class="btn_voltar" onclick="voltarPagina()">
+
+            Voltar
+
+        </button>
 
     </div>
 
-    <!-- BOTÃO -->
-
-    <button class="btn_jogar"
-            id="btnJogar">
-
-      Iniciar jogo
-
-    </button>
-
-    <!-- VOLTAR -->
-
-    <button class="btn_voltar"
-            onclick="voltarPagina()">
-
-      Voltar
-
-    </button>
-
-  </div>
-
-  <script src="menu_jogo.js"></script>
+    <script src="menu_jogo.js"></script>
 
 </body>
 

@@ -1,478 +1,338 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   font-family: Arial, sans-serif;
 }
 
-body{
+body {
   background: #eef3f7;
 }
 
-/* =========================
-   SEÇÃO
-========================= */
-
-.jogo_memoria{
+.jogo_memoria {
   padding: 80px 20px;
-
   text-align: center;
 }
 
-/* =========================
-   TITULO
-========================= */
-
-.jogo_memoria h1{
+.jogo_memoria h1 {
   font-size: 55px;
-
   color: #0f2f92;
-
   margin-bottom: 10px;
 }
 
-.subtitulo{
+.subtitulo {
   font-size: 24px;
-
   margin-bottom: 40px;
-
   color: #444;
 }
 
-/* =========================
-   PAINEL
-========================= */
+/*painel*/
 
-.painel{
+.painel {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
   gap: 20px;
-
   max-width: 1200px;
-
   margin: 0 auto 50px auto;
-
   padding: 0 10px;
 }
 
-/* CARD STATUS */
+/*div de status, pontuação e etc*/
 
-.box_status{
+.box_status {
   background: white;
-
   padding: 22px;
-
   border-radius: 20px;
-
   display: flex;
-
   align-items: center;
-
   gap: 18px;
-
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   transition: 0.3s;
 }
 
-.box_status:hover{
+.box_status:hover {
   transform: translateY(-5px);
 }
 
-/* ÍCONE */
+/*icones*/
 
-.box_status span{
+.box_status span {
   width: 65px;
   height: 65px;
-
   min-width: 65px;
-
   border-radius: 15px;
-
   background: #eef3f7;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   font-size: 34px;
 }
 
-/* TEXTOS */
-
-.info_status{
+.info_status {
   text-align: left;
 }
 
-.box_status p{
+.box_status p {
   font-size: 15px;
-
   color: #666;
-
   margin-bottom: 5px;
-
   text-align: left;
 }
 
-.box_status h2{
+.box_status h2 {
   font-size: 32px;
-
   color: #0f2f92;
-
   text-align: left;
 }
 
-/* =========================
-   TABULEIRO
-========================= */
+/* tabuleiro*/
 
-.tabuleiro{
+.tabuleiro {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
   gap: 35px;
-
   max-width: 1250px;
-
   margin: 0 auto;
-
   padding: 30px;
 }
 
-/* =========================
-   CARTAS
-========================= */
+/*cartas*/
 
-.carta{
+.carta {
   position: relative;
-
   height: 220px;
-
   cursor: pointer;
-
   transform-style: preserve-3d;
-
   transition: transform 0.6s;
 }
 
-/* VIRAR */
-
-.carta.virada{
+/*virar carta*/
+.carta.virada {
   transform: rotateY(180deg);
 }
 
-/* FRENTE E VERSO */
+/*frente e verso d carta*/
 
 .frente,
-.verso{
+.verso {
   position: absolute;
-
   width: 100%;
   height: 100%;
-
   border-radius: 18px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   text-align: center;
-
   padding: 20px;
-
   backface-visibility: hidden;
-
-  box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* FRENTE */
-
-.frente{
+.frente {
   background: #0f2f92;
-
   color: white;
-
   font-size: 80px;
   font-weight: bold;
 }
 
-/* VERSO */
-
-.verso{
+.verso {
   background: white;
-
   color: #0f2f92;
-
   transform: rotateY(180deg);
-
   font-size: 22px;
   font-weight: bold;
-
   line-height: 1.4;
 }
 
-/* CARTA CORRETA */
-
-.carta.correta .verso{
+/*carta correta*/
+.carta.correta .verso {
   background: #22c55e;
-
   color: white;
 }
 
-/* =========================
-   BOTÃO REINICIAR
-========================= */
-
-.btn_reiniciar{
+.btn_reiniciar {
   margin-top: 50px;
-
   background: transparent;
-
   border: 2px solid #0f2f92;
-
   color: #0f2f92;
-
   padding: 15px 35px;
-
   border-radius: 12px;
-
   font-size: 22px;
   font-weight: bold;
-
   cursor: pointer;
-
   transition: 0.3s;
 }
 
-.btn_reiniciar:hover{
+.btn_reiniciar:hover {
   background: #0f2f92;
-
   color: white;
 }
 
-/* =========================
-   TELA FINAL
-========================= */
+/* tela final */
 
-.fim_jogo{
+.fim_jogo {
   position: fixed;
-
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100vh;
-
-  background: rgba(0,0,0,0.6);
-
+  background: rgba(0, 0, 0, 0.6);
   display: none;
-
   justify-content: center;
   align-items: center;
-
   z-index: 999;
 }
 
-.fim_jogo.mostrar{
+.fim_jogo.mostrar {
   display: flex;
 }
 
-.box_final{
+.box_final {
   background: white;
-
   width: 90%;
   max-width: 500px;
-
   padding: 40px;
-
   border-radius: 25px;
-
   text-align: center;
-
   animation: aparecer 0.4s ease;
 }
 
-.box_final h1{
+.box_final h1 {
   color: #0f2f92;
-
   font-size: 40px;
-
   margin-bottom: 20px;
 }
 
-.box_final p{
+.box_final p {
   font-size: 24px;
-
   margin-bottom: 15px;
 }
 
-.box_final span{
+.box_final span {
   color: #0f2f92;
-
   font-weight: bold;
 }
 
-/* BOTÕES DA TELA FINAL */
+/*botoes da tela final */
 
-.box_final button{
+.box_final button {
   margin-top: 15px;
-
   width: 100%;
-
   border: none;
-
   padding: 15px 20px;
-
   border-radius: 12px;
-
   font-size: 20px;
   font-weight: bold;
-
   cursor: pointer;
-
   transition: 0.3s;
 }
 
-/* BOTÃO JOGAR NOVAMENTE */
 
-.box_final button:first-of-type{
+.box_final button:first-of-type {
   background: #0f2f92;
-
   color: white;
 }
 
-.box_final button:first-of-type:hover{
+.box_final button:first-of-type:hover {
   background: #091f66;
 }
 
-/* BOTÃO SAIR */
-
-.btn_sair{
+.btn_sair {
   background: #e5e7eb;
-
   color: #222;
 }
 
-.btn_sair:hover{
+.btn_sair:hover {
   background: #d1d5db;
 }
 
-/* =========================
-   ANIMAÇÃO
-========================= */
+/*animação da tela final*/
 
-@keyframes aparecer{
+@keyframes aparecer {
 
-  from{
+  from {
     opacity: 0;
     transform: scale(0.8);
   }
 
-  to{
+  to {
     opacity: 1;
     transform: scale(1);
   }
 
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
+/*Responsividade*/
+@media(max-width: 1100px) {
 
-/* NOTEBOOKS */
-
-@media(max-width: 1100px){
-
-  .painel{
+  .painel {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .tabuleiro{
+  .tabuleiro {
     gap: 25px;
   }
 
 }
 
-/* TABLETS */
+/*tablets*/
 
-@media(max-width: 768px){
+@media(max-width: 768px) {
 
-  .jogo_memoria{
+  .jogo_memoria {
     padding: 50px 15px;
   }
 
-  .jogo_memoria h1{
+  .jogo_memoria h1 {
     font-size: 38px;
   }
 
-  .subtitulo{
+  .subtitulo {
     font-size: 18px;
 
     margin-bottom: 30px;
   }
 
-  /* PAINEL */
-
-  .painel{
+  .painel {
     grid-template-columns: repeat(2, 1fr);
-
     gap: 14px;
-
     margin-bottom: 35px;
   }
 
-  .box_status{
+  .box_status {
     display: flex;
-
     flex-direction: row;
-
     align-items: center;
-
     justify-content: flex-start;
-
     padding: 14px;
-
     border-radius: 16px;
-
     gap: 12px;
   }
 
-  .info_status{
+  .info_status {
     text-align: left;
   }
 
-  .box_status span{
+  .box_status span {
     width: 48px;
     height: 48px;
-
     min-width: 48px;
-
     font-size: 22px;
-
     border-radius: 12px;
   }
 
-  .box_status p{
+  .box_status p {
     font-size: 13px;
-
     margin-bottom: 2px;
-
     text-align: left;
   }
 
-  .box_status h2{
+  .box_status h2 {
     font-size: 22px;
-
     text-align: left;
   }
 
-  /* TABULEIRO */
-
-  .tabuleiro{
+  .tabuleiro {
     grid-template-columns: repeat(2, 1fr);
 
     gap: 16px;
@@ -482,35 +342,33 @@ body{
     max-width: 520px;
   }
 
-  .carta{
+  .carta {
     height: 170px;
   }
 
-  .frente{
+  .frente {
     font-size: 65px;
   }
 
-  .verso{
+  .verso {
     font-size: 17px;
 
     padding: 12px;
   }
 
-  /* TELA FINAL */
-
-  .box_final{
+  .box_final {
     padding: 30px 22px;
   }
 
-  .box_final h1{
+  .box_final h1 {
     font-size: 32px;
   }
 
-  .box_final p{
+  .box_final p {
     font-size: 20px;
   }
 
-  .box_final button{
+  .box_final button {
     font-size: 18px;
 
     padding: 14px;
@@ -518,134 +376,103 @@ body{
 
 }
 
-/* CELULARES */
+/*celulares*/
 
-@media(max-width: 480px){
+@media(max-width: 480px) {
 
-  .jogo_memoria{
+  .jogo_memoria {
     padding: 35px 10px;
   }
 
-  .jogo_memoria h1{
+  .jogo_memoria h1 {
     font-size: 30px;
   }
 
-  .subtitulo{
+  .subtitulo {
     font-size: 16px;
-
     margin-bottom: 22px;
   }
 
-  /* PAINEL */
-
-  .painel{
+  .painel {
     grid-template-columns: repeat(2, 1fr);
-
     gap: 10px;
-
     margin-bottom: 28px;
-
     padding: 0;
   }
 
-  .box_status{
+  .box_status {
     display: flex;
-
     flex-direction: row;
-
     align-items: center;
-
     justify-content: flex-start;
-
     gap: 8px;
-
     padding: 10px 8px;
-
     border-radius: 12px;
   }
 
-  .info_status{
+  .info_status {
     text-align: left;
   }
 
-  .box_status span{
+  .box_status span {
     width: 36px;
     height: 36px;
-
     min-width: 36px;
-
     font-size: 16px;
-
     border-radius: 10px;
   }
 
-  .box_status p{
+  .box_status p {
     font-size: 11px;
-
     text-align: left;
-
     margin-bottom: 1px;
   }
 
-  .box_status h2{
+  .box_status h2 {
     font-size: 18px;
-
     text-align: left;
   }
 
-  /* TABULEIRO */
-
-  .tabuleiro{
+  .tabuleiro {
     grid-template-columns: repeat(2, 1fr);
-
     gap: 10px;
-
     padding: 0;
-
     max-width: 320px;
   }
 
-  .carta{
+  .carta {
     height: 115px;
   }
 
-  .frente{
+  .frente {
     font-size: 42px;
   }
 
-  .verso{
+  .verso {
     font-size: 12px;
-
     padding: 8px;
-
     line-height: 1.2;
   }
 
-  /* BOTÃO */
-
-  .btn_reiniciar{
+  .btn_reiniciar {
     width: 100%;
-
     font-size: 17px;
-
     padding: 13px;
   }
 
-  /* TELA FINAL */
-
-  .box_final{
+  .box_final {
     padding: 25px 18px;
   }
 
-  .box_final h1{
+  .box_final h1 {
     font-size: 26px;
   }
 
-  .box_final p{
+  .box_final p {
     font-size: 17px;
   }
 
-  .box_final button{
+  .box_final button {
     font-size: 16px;
 
     padding: 13px;
@@ -653,41 +480,41 @@ body{
 
 }
 
-/* CELULARES MUITO PEQUENOS */
+/*celulares menores*/
 
-@media(max-width: 360px){
+@media(max-width: 360px) {
 
-  .painel{
+  .painel {
     grid-template-columns: 1fr;
   }
 
-  .box_status{
+  .box_status {
     padding: 8px;
   }
 
-  .tabuleiro{
+  .tabuleiro {
     gap: 8px;
 
     max-width: 280px;
   }
 
-  .carta{
+  .carta {
     height: 105px;
   }
 
-  .frente{
+  .frente {
     font-size: 38px;
   }
 
-  .verso{
+  .verso {
     font-size: 11px;
   }
 
-  .box_final h1{
+  .box_final h1 {
     font-size: 22px;
   }
 
-  .box_final p{
+  .box_final p {
     font-size: 15px;
   }
 
