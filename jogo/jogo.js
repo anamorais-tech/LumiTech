@@ -205,6 +205,18 @@ function finalizarJogo(){
 
   clearInterval(cronometro);
 
+  /* SALVAR RESULTADOS */
+
+  localStorage.setItem(
+    "pontuacaoJogo",
+    pontuacao
+  );
+
+  localStorage.setItem(
+    "tempoJogo",
+    tempoTexto.innerHTML
+  );
+
   /* MOSTRAR RESULTADOS */
 
   pontuacaoFinal.innerHTML =

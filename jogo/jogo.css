@@ -20,7 +20,9 @@ body{
   text-align: center;
 }
 
-/* TITULO */
+/* =========================
+   TITULO
+========================= */
 
 .jogo_memoria h1{
   font-size: 55px;
@@ -34,6 +36,8 @@ body{
   font-size: 24px;
 
   margin-bottom: 40px;
+
+  color: #444;
 }
 
 /* =========================
@@ -41,46 +45,84 @@ body{
 ========================= */
 
 .painel{
-  display: flex;
+  display: grid;
 
-  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
 
-  gap: 25px;
+  gap: 20px;
 
-  flex-wrap: wrap;
+  max-width: 1200px;
 
-  margin-bottom: 50px;
+  margin: 0 auto 50px auto;
+
+  padding: 0 10px;
 }
+
+/* CARD STATUS */
 
 .box_status{
   background: white;
 
-  width: 250px;
+  padding: 22px;
 
-  padding: 20px;
+  border-radius: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+  transition: 0.3s;
+}
+
+.box_status:hover{
+  transform: translateY(-5px);
+}
+
+/* ÍCONE */
+
+.box_status span{
+  width: 65px;
+  height: 65px;
+
+  min-width: 65px;
 
   border-radius: 15px;
 
+  background: #eef3f7;
+
   display: flex;
+  justify-content: center;
   align-items: center;
 
-  gap: 20px;
-
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  font-size: 34px;
 }
 
-.box_status span{
-  font-size: 40px;
+/* TEXTOS */
+
+.info_status{
+  text-align: left;
 }
 
 .box_status p{
-  font-size: 18px;
+  font-size: 15px;
+
+  color: #666;
+
+  margin-bottom: 5px;
+
+  text-align: left;
 }
 
 .box_status h2{
-  font-size: 35px;
+  font-size: 32px;
 
   color: #0f2f92;
+
+  text-align: left;
 }
 
 /* =========================
@@ -169,6 +211,8 @@ body{
 
   font-size: 22px;
   font-weight: bold;
+
+  line-height: 1.4;
 }
 
 /* CARTA CORRETA */
@@ -180,7 +224,7 @@ body{
 }
 
 /* =========================
-   BOTÃO
+   BOTÃO REINICIAR
 ========================= */
 
 .btn_reiniciar{
@@ -272,31 +316,54 @@ body{
   font-weight: bold;
 }
 
+/* BOTÕES DA TELA FINAL */
+
 .box_final button{
-  margin-top: 20px;
+  margin-top: 15px;
 
-  background: #0f2f92;
-
-  color: white;
+  width: 100%;
 
   border: none;
 
-  padding: 15px 30px;
+  padding: 15px 20px;
 
   border-radius: 12px;
 
   font-size: 20px;
+  font-weight: bold;
 
   cursor: pointer;
 
   transition: 0.3s;
 }
 
-.box_final button:hover{
+/* BOTÃO JOGAR NOVAMENTE */
+
+.box_final button:first-of-type{
+  background: #0f2f92;
+
+  color: white;
+}
+
+.box_final button:first-of-type:hover{
   background: #091f66;
 }
 
-/* ANIMAÇÃO */
+/* BOTÃO SAIR */
+
+.btn_sair{
+  background: #e5e7eb;
+
+  color: #222;
+}
+
+.btn_sair:hover{
+  background: #d1d5db;
+}
+
+/* =========================
+   ANIMAÇÃO
+========================= */
 
 @keyframes aparecer{
 
@@ -316,50 +383,312 @@ body{
    RESPONSIVO
 ========================= */
 
-@media(max-width: 900px){
+/* NOTEBOOKS */
+
+@media(max-width: 1100px){
+
+  .painel{
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   .tabuleiro{
-    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
   }
 
 }
 
+/* TABLETS */
+
 @media(max-width: 768px){
 
+  .jogo_memoria{
+    padding: 50px 15px;
+  }
+
   .jogo_memoria h1{
-    font-size: 40px;
+    font-size: 38px;
   }
 
   .subtitulo{
     font-size: 18px;
+
+    margin-bottom: 30px;
   }
+
+  /* PAINEL */
+
+  .painel{
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+
+    margin-bottom: 35px;
+  }
+
+  .box_status{
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    padding: 14px;
+
+    border-radius: 16px;
+
+    gap: 12px;
+  }
+
+  .info_status{
+    text-align: left;
+  }
+
+  .box_status span{
+    width: 48px;
+    height: 48px;
+
+    min-width: 48px;
+
+    font-size: 22px;
+
+    border-radius: 12px;
+  }
+
+  .box_status p{
+    font-size: 13px;
+
+    margin-bottom: 2px;
+
+    text-align: left;
+  }
+
+  .box_status h2{
+    font-size: 22px;
+
+    text-align: left;
+  }
+
+  /* TABULEIRO */
 
   .tabuleiro{
     grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+
+    padding: 10px;
+
+    max-width: 520px;
   }
 
   .carta{
-    height: 180px;
+    height: 170px;
+  }
+
+  .frente{
+    font-size: 65px;
   }
 
   .verso{
+    font-size: 17px;
+
+    padding: 12px;
+  }
+
+  /* TELA FINAL */
+
+  .box_final{
+    padding: 30px 22px;
+  }
+
+  .box_final h1{
+    font-size: 32px;
+  }
+
+  .box_final p{
+    font-size: 20px;
+  }
+
+  .box_final button{
     font-size: 18px;
+
+    padding: 14px;
   }
 
 }
 
+/* CELULARES */
+
 @media(max-width: 480px){
 
+  .jogo_memoria{
+    padding: 35px 10px;
+  }
+
+  .jogo_memoria h1{
+    font-size: 30px;
+  }
+
+  .subtitulo{
+    font-size: 16px;
+
+    margin-bottom: 22px;
+  }
+
+  /* PAINEL */
+
+  .painel{
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 28px;
+
+    padding: 0;
+  }
+
+  .box_status{
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 8px;
+
+    padding: 10px 8px;
+
+    border-radius: 12px;
+  }
+
+  .info_status{
+    text-align: left;
+  }
+
+  .box_status span{
+    width: 36px;
+    height: 36px;
+
+    min-width: 36px;
+
+    font-size: 16px;
+
+    border-radius: 10px;
+  }
+
+  .box_status p{
+    font-size: 11px;
+
+    text-align: left;
+
+    margin-bottom: 1px;
+  }
+
+  .box_status h2{
+    font-size: 18px;
+
+    text-align: left;
+  }
+
+  /* TABULEIRO */
+
   .tabuleiro{
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+
+    padding: 0;
+
+    max-width: 320px;
   }
 
   .carta{
-    height: 160px;
+    height: 115px;
   }
 
   .frente{
-    font-size: 60px;
+    font-size: 42px;
+  }
+
+  .verso{
+    font-size: 12px;
+
+    padding: 8px;
+
+    line-height: 1.2;
+  }
+
+  /* BOTÃO */
+
+  .btn_reiniciar{
+    width: 100%;
+
+    font-size: 17px;
+
+    padding: 13px;
+  }
+
+  /* TELA FINAL */
+
+  .box_final{
+    padding: 25px 18px;
+  }
+
+  .box_final h1{
+    font-size: 26px;
+  }
+
+  .box_final p{
+    font-size: 17px;
+  }
+
+  .box_final button{
+    font-size: 16px;
+
+    padding: 13px;
+  }
+
+}
+
+/* CELULARES MUITO PEQUENOS */
+
+@media(max-width: 360px){
+
+  .painel{
+    grid-template-columns: 1fr;
+  }
+
+  .box_status{
+    padding: 8px;
+  }
+
+  .tabuleiro{
+    gap: 8px;
+
+    max-width: 280px;
+  }
+
+  .carta{
+    height: 105px;
+  }
+
+  .frente{
+    font-size: 38px;
+  }
+
+  .verso{
+    font-size: 11px;
+  }
+
+  .box_final h1{
+    font-size: 22px;
+  }
+
+  .box_final p{
+    font-size: 15px;
   }
 
 }

@@ -1,0 +1,225 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+
+  background: #eef3f7;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 20px;
+
+}
+
+/* CARD PRINCIPAL */
+
+.menu_jogo{
+
+  width: 100%;
+  max-width: 420px;
+
+  background: white;
+
+  border-radius: 25px;
+
+  padding: 40px 30px;
+
+  text-align: center;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+
+}
+
+/* IMAGEM */
+
+.menu_jogo img{
+
+  width: 130px;
+
+  margin-bottom: 25px;
+
+}
+
+/* TITULO */
+
+.menu_jogo h1{
+
+  color: #0f2f92;
+
+  font-size: 38px;
+
+  margin-bottom: 15px;
+
+}
+
+/* TEXTO */
+
+.menu_jogo .descricao{
+
+  color: #555;
+
+  font-size: 18px;
+
+  line-height: 1.5;
+
+  margin-bottom: 30px;
+
+}
+
+/* BOX RESULTADOS */
+
+.resultado_box{
+
+  background: #f5f7ff;
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  margin-bottom: 30px;
+
+}
+
+.resultado_box h2{
+
+  color: #0f2f92;
+
+  margin-bottom: 20px;
+
+  font-size: 24px;
+
+}
+
+.resultado_item{
+
+  margin-bottom: 18px;
+
+}
+
+.resultado_item p{
+
+  color: #666;
+
+  margin-bottom: 5px;
+
+  font-size: 16px;
+
+}
+
+.resultado_item span{
+
+  font-size: 30px;
+
+  font-weight: bold;
+
+  color: #1e40af;
+
+}
+
+/* BOTÃO */
+
+.btn_jogar{
+
+  width: 100%;
+
+  border: none;
+
+  background: #1e40af;
+
+  color: white;
+
+  padding: 18px;
+
+  border-radius: 14px;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.btn_jogar:hover{
+
+  background: #0f2f92;
+
+  transform: translateY(-3px);
+
+}
+
+/* BOTÃO VOLTAR */
+
+.btn_voltar{
+
+  width: 100%;
+
+  margin-top: 15px;
+
+  border: none;
+
+  background: #dbe4ff;
+
+  color: #0f2f92;
+
+  padding: 15px;
+
+  border-radius: 14px;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.btn_voltar:hover{
+
+  background: #c8d7ff;
+
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 480px){
+
+  .menu_jogo{
+
+    padding: 35px 22px;
+
+  }
+
+  .menu_jogo h1{
+
+    font-size: 30px;
+
+  }
+
+  .menu_jogo .descricao{
+
+    font-size: 16px;
+
+  }
+
+  .resultado_item span{
+
+    font-size: 25px;
+
+  }
+
+}

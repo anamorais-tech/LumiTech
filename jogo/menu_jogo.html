@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Jogo da Memória | LumiTech</title>
+
+  <link rel="icon"
+        type="image/png"
+        href="img/logo.png">
+
+  <link rel="stylesheet"
+        href="menu_jogo.css">
+
+</head>
+
+<body>
+
+  <div class="menu_jogo">
+
+    <img src="../img/jogo.png" alt="imagem">
+
+    <h1>Jogo da Memória</h1>
+
+    <p class="descricao">
+
+      Descubra formas divertidas de economizar energia
+      enquanto testa sua memória.
+
+    </p>
+
+    <!-- RESULTADOS -->
+
+    <div class="resultado_box"
+         id="resultadoBox">
+
+      <h2>Última partida</h2>
+
+      <!-- PONTUAÇÃO -->
+
+      <div class="resultado_item">
+
+        <p>Pontuação</p>
+
+        <span id="pontuacaoSalva">
+          0
+        </span>
+
+      </div>
+
+      <!-- TEMPO -->
+
+      <div class="resultado_item">
+
+        <p>Tempo</p>
+
+        <span id="tempoSalvo">
+          00:00
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- BOTÃO -->
+
+    <button class="btn_jogar"
+            id="btnJogar">
+
+      Iniciar jogo
+
+    </button>
+
+    <!-- VOLTAR -->
+
+    <button class="btn_voltar"
+            onclick="voltarPagina()">
+
+      Voltar
+
+    </button>
+
+  </div>
+
+  <script src="menu_jogo.js"></script>
+
+</body>
+
+</html>

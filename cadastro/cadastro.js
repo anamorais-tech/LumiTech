@@ -68,6 +68,6 @@ form.addEventListener("submit", function (event) {
   alert("Cadastro realizado com sucesso!");
 
   //Redirecionar pagina 
-  window.location.href = "login.html";
+  window.location.href = "../login/login.html";
 
 });

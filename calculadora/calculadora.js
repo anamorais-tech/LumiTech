@@ -50,11 +50,11 @@ function voltarPagina() {
 
   if (usuarioLogado) {
 
-    window.location.href = "index_logado.html";
+    window.location.href = "../index_logado.html";
 
   } else {
 
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 
   }
 
